@@ -1,0 +1,11 @@
+# Ignorar archivos auxiliares de Latex
+	
+*.dvi
+*.gz
+*.log
+*.aux
+*.out
+*.nav
+*.pdf
+
+

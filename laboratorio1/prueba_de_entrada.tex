@@ -1,0 +1,131 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[lmargin=3cm,rmargin=2.5cm,tmargin=2.5cm,bmargin=1.5cm]{geometry}
+ % \usepackage[utf-8]{inputenc} (si lo pones tienes problemas y la verdad no se por que . 
+\usepackage[spanish]{babel}%para que te aparezca capitulo 1 en vez de chapter 1
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{float} % Este sive para usa el [H] en el begin figure
+
+\usepackage{circuitikz} %este es el paquete para crear circuitos electricos 
+\usepackage{siunitx} %este paquete es para las unidades de medida
+
+\newtheorem{preg}{Pregunta} %este es para las preguntas 
+
+\begin{document}
+
+\begin{itemize}
+\item Nombre : Juan Alonso Alcalá Lujan 
+\item Codigo : 20172226A 
+\end{itemize}
+
+% PREGUNTA NUMERO 1 
+\begin{preg}
+Lea la guia, analice y realice los calculos que se indican en los pasos 2, 4 y 6.
+\end{preg}
+
+\begin{itemize}
+\item \textbf{Paso 2} :
+
+\begin{figure}[H]
+\begin{center}
+\begin{circuitikz} 
+\draw (0,0) to[battery,a= \SI{10}{\volt}] (0,4)
+             to[] (4,4) node[label={above:A}]{} to[R , l=$R_1$, *-*] (4,2) node[label={right:B}]{} to [R , l=$R_2$,*-*] (4,0) node[label={right:C}]{} ;
+\draw (0,0) to [] (4,0) ;
+\end{circuitikz} 
+\end{center}
+\caption{circuito1}
+\end{figure}
+
+	\begin{itemize}
+	\item  Del circuito 1 seleccione $R_2$ tal que $\frac{V_{BC}}{V_{AC}} = \frac{1}{2}$ 
+\begin{align*}
+	V_{BC} &= R_2 I \\ 
+	V_{AC} &= (R_1+R_2) I
+\intertext{ Dividiendo tenemos }
+	\dfrac{V_{AC}}{V_{BC}} &= \dfrac{R_1+R_2}{R_2} \\
+	2 &=  \dfrac{R_1+R_2}{R_2} \\
+	\therefore R_1 &= R_2  = \SI{10}{\kilo\ohm}  
+\end{align*}
+
+	\item Coloque una resistencia $R_3$ en paralelo con $R_2$, seleccione el valor de $R_3$ tal que $\frac{V_{BC}}{V_{AC}} = \frac{1}{4}$	
+\begin{align*}
+	V_{BC} &= \left(\dfrac{R_2 R_3}{R_2+R_3}\right) I \\
+	V_{AC} &= \left(\dfrac{R_2 R_3}{R_2+R_3}+R_1\right) I 
+\intertext{ Dividiendo tenemos }
+	\dfrac{V_{BC}}{V_{AC}} &= \dfrac{\left(\dfrac{R_2 R_3}{R_2+R_3}\right) }{\left(\dfrac{R_2 R_3}{R_2+R_3}\right) +R_1} \\
+	\dfrac{1}{4} &= \dfrac{\left(\dfrac{R_2 R_3}{R_2+R_3}\right) }{\left(\dfrac{R_2 R_3}{R_2+R_3}\right) +R_1} \\
+\intertext{ como $R_1 = R_2$ tenemos }
+\therefore & R_3 = \dfrac{R_2}{2} = \SI{5}{\kilo\ohm}
+\end{align*}	
+\end{itemize}	
+
+\item \textbf{Paso4}
+
+\begin{figure}[H]
+\begin{center}
+\begin{circuitikz} 
+\draw (0,0) to[battery,a= \SI{10}{\volt}] (0,5)
+             to[] (5,5) to[R , l=$R_2$]  (5,0) ;
+\draw (0,0) to [] (5,0) ; 
+\draw (3,5) to[R , l=$R_1$,a=\SI{10}{\kilo \ohm}] (3,0);
+\end{circuitikz} 
+\caption{Circuito2}
+\end{center}
+\end{figure}
+
+\begin{itemize}
+\item Calcule $R_2$ tal que $\frac{I_2}{I} = \frac{1}{2}$
+\begin{align*}
+V &= I_2 R_2 \\
+V &= I \left(\dfrac{R_1 R_2}{R_1+R_2}\right) \\
+\intertext{Igualando}
+I_2 R_2 &= I \left(\dfrac{R_1 R_2}{R_1+R_2}\right) \\
+\dfrac{I_2}{I} &= \dfrac{R_1 }{R_1+R_2} \\
+ \dfrac{1}{2} &= \dfrac{R_1 }{R_1+R_2} \\
+ \therefore  R_1 &= R_2 = \SI{5}{\kilo\ohm}
+\end{align*}
+\item Coloque una resistencia $R_3$ en serie con $R_2$, calcule el valor de $R_3$ tal que $\frac{I_2}{I} = \frac{1}{4}$
+\begin{align*}
+V &= (R_2 + R_3) I_2\\
+V &= \left(\dfrac{R_1(R_2+R_3)}{R_1+R_2+R_3}\right)I \\
+\intertext{Igualando y separando tenemos }
+\dfrac{1}{4} &=  \dfrac{R_1}{R_1+R_2+R_3} \\
+\therefore R_3 &=  \dfrac{R_1}{2} = \SI{5}{\kilo\ohm}
+\end{align*}
+\end{itemize}
+
+\end{itemize}
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{preg}
+Para el circuito 1.1 calcula el porcentaje de error de medicion de voltaje en $R_2$ de un voltímetro con impedancia interna $R_v = 10 $. Considere 
+a) $R_1 = _2 =10 k $ b) $ R_1 = R_2 = 10M  $ 
+
+\end{preg}
+
+
+
+
+\begin{preg}
+¿Que significa que un multimetro digital sea de $3\frac{1}{2}$ digitos ? 
+\end{preg}
+Un multimetro digital de $ 3 \frac{1}{2} $ muestra 3 digitos completos en pantalla que pueden cambiar de 0 a 9 y un digito que puede ser bien 0 o 1 . Significa que en la pantalla se mostraran numeros desde 0 a 1999 .
+$$
+\underbrace{1}_{1/2} \underbrace{\quad 3 \quad 4 \quad 1 }_{3 \mbox{ digitos} }
+$$
+Lo de arriba es lo que se mostrara en pantalla . 
+\end{document}
