@@ -1,0 +1,222 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[lmargin=1cm,rmargin=1cm,tmargin=1cm,bmargin=1.5cm]{geometry}
+ % \usepackage[utf-8]{inputenc} (si lo pones tienes problemas y la verdad no se por que . 
+\usepackage[spanish]{babel}%para que te aparezca capitulo 1 en vez de chapter 1
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{float} % Este sive para usa el [H] en el begin figure
+\parindent=0mm %con esto elimino la sangría 
+\usepackage{graphicx}
+\usepackage{caption} % Necesario para poner caption
+\usepackage{subcaption} % Necesario para las subfiguras 
+
+
+
+\usepackage{circuitikz} %este es el paquete para crear circuitos electricos 
+\usepackage{siunitx} %este paquete es para las unidades de medida
+
+\newtheorem{preg}{Pregunta} %este es para las preguntas 
+
+
+\begin{document}
+
+\section*{Anexo- Hoja de datos}
+
+\begin{itemize}
+
+\item \textbf{Participantes:} 
+\begin{itemize}
+\item Juan Alonso Alcalá Lujan 20172226A
+\item Lopez Lozano Christian Rafael 20180016B
+\end{itemize} 
+\item \textbf{Fecha:} 09-06-2020
+
+\end{itemize}
+
+
+\subsection*{Paso1}
+
+\begin{itemize}
+
+\item \textbf{Osciloscopio} 
+\begin{itemize}
+
+\item Marca y modelo : Tektronix , TDS 2024
+\item Ancho de banda :  200MHz 
+\item Señal de calibracion : 5V/1kHz
+
+\end{itemize}
+
+
+\item \textbf{Generador} 
+
+\begin{itemize}
+\item marca y modelo : - - - - - - - - - -
+\item numero y digitos : - - - - - - - - -
+
+\end{itemize}
+
+\end{itemize}
+
+
+
+\subsection*{Paso2}
+
+
+\begin{itemize}
+\item \textbf{voltaje pico}: 5 voltios 
+\item \textbf{frecuencia} : 1 kHz 
+\end{itemize}
+
+\subsection*{Paso3}
+
+\begin{center}
+ \begin{tabular}{|c|| c c c c|} 
+ \hline
+ frecuencia nominal & \SI{100}{\hertz} & \SI{1}{\kilo\hertz} & \SI{10}{\kilo\hertz} & \SI{1}{\mega\hertz}  \\  
+ \hline\hline
+ perido medido & 10 ms & 1ms & 0.1 ms & 1 us \\
+ \hline
+ frecuencia calculada & 100 Hz & 1kHz & 10kHz & 1MHz \\
+ \hline
+\end{tabular}
+\end{center}
+
+\subsection*{Paso4\footnote{los errores son los mismos para todas las medidas de frecuencia}}
+
+\begin{center}
+ \begin{tabular}{|c|| c c c c|} 
+ \hline
+ frecuencia nominal & \SI{100}{\hertz} & \SI{1}{\kilo\hertz} & \SI{10}{\kilo\hertz} & \SI{1}{\mega\hertz}  \\  
+ \hline\hline
+$V_{rms}$(medido) & 3.535V & 3.535V  & 3.535V  & 3.535V  \\ 
+ \hline
+$V_{rms}$(calculado)& 3.536V & 3.536V & 3.536V & 3.536V \\
+ \hline 
+  $\% \varDelta V_{rms}/V_{rm} $ & 0.028 \% & 0.028 \% & 0.028 \% & 0.028 \%\\
+ \hline
+\end{tabular}
+\end{center}
+
+
+\newpage
+
+\subsection*{Paso5}
+
+
+\begin{center}
+ \begin{tabular}{|c| c | c | c | c|} 
+ \hline
+ frecuencia nominal & $V_p$ & Periodo & $ \tau = RC $  \\  
+ \hline\hline
+ 100 Hz & $5 V$ & 10 ms & \SI{1}{\mega\hertz}  \\   
+ \hline
+ 1000 Hz  & $5 V$ & 1000 us & \SI{1}{\mega\hertz}  \\  
+ \hline 
+ 2000 Hz & $5 V$ & 500 us & \SI{1}{\mega\hertz}  \\  
+ \hline
+  4	000 Hz & $5 V$ & 250 us & \SI{1}{\mega\hertz}  \\  
+  \hline
+\end{tabular}
+\end{center}
+
+
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{f=100Hz.pdf}
+         \caption{100 Hz}
+     \end{subfigure}
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{f=1000Hz.pdf}
+         \caption{1000 Hz}
+     \end{subfigure}
+          \centering
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{f=2000Hz.pdf}
+         \caption{100 Hz}
+     \end{subfigure}
+     \hfill
+          \centering
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{f=4000Hz.pdf}
+         \caption{100 Hz}
+     \end{subfigure}
+\end{figure}
+
+
+
+
+
+
+
+% Significado de la constante : Equivale al tiempo necesario para que el condensador se cargue o descarge un 63 \% de la carga final o inicial respectivamente . 
+
+	
+\subsection*{Paso7\footnote{Preguntar sobre la diferencia entre $\phi$ calculado y $\phi$ medido}}
+
+
+\begin{center}
+ \begin{tabular}{|c| c | c | c | c | c |} 
+ \hline
+ $C_1$ & $f$ & $\phi_{cal}$ & $ V_{ep} $ & $V_{sp}$ & $ \phi_{med} $ \\  
+ \hline\hline
+ 200 nF & 500 Hz & 57.87 & 5 V & 4 V & 32.4  \\   
+ \hline
+ 330 nF & 500 Hz & 43.98 &  5 V &  3.4 V & 46.8 \\  
+ \hline 
+\end{tabular}
+\end{center}
+
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{f=500Hz, C1=200nF.pdf}
+         \caption{f=500Hz, C1=200nF	}
+     \end{subfigure}
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{f=500Hz, C2=330nF.pdf}
+         \caption{f=500Hz, C2=330nF}
+     \end{subfigure}
+\end{figure}
+
+\subsection*{Paso8\footnote{No puedo poner el error debido a esa cuestion entre $\phi$ calculado y $\phi$ medido  }}
+
+\begin{center}
+ \begin{tabular}{|c| c | c | c | c | c |} 
+ \hline
+ $C_1$ & $f$ & a & b & $\phi$  	& $\% \dfrac{\Delta \phi}{\phi} $ \\  
+ \hline\hline
+ 200 nF & 500 Hz & 4.5 & 8.5 & 31.96 &  \\   
+ \hline
+ 330 nF & 500 Hz & 10 &  14 & 45.58 &  \\  
+ \hline 
+\end{tabular}
+\end{center}	
+
+
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{Grafica_f=500_C=200nF.pdf}
+         \caption{Grafica f=500,C=200nF}
+     \end{subfigure}
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{Grafica_f=500Hz, C1=3300nF.pdf}
+         \caption{Grafica f=500Hz, C1=3300nF}
+     \end{subfigure}
+\end{figure}
+
+
+  
+
+\end{document}
